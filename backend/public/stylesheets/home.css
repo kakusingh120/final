@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+
+      .font-playfair {
+        font-family: 'Playfair Display', serif;
+      }
+      
+      /* Mobile menu animation */
+      .mobile-menu {
+        transition: all 0.3s ease-in-out;
+      }

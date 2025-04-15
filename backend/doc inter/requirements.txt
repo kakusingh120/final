@@ -1,0 +1,8 @@
+flask
+torch
+transformers
+pdfplumber
+Pillow
+easyocr
+requests
+numpy

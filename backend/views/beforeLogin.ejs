@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lawgic</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/stylesheets/home.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<%- include('partials/loader') %>
+<body class="bg-[#f4eede] scroll-smooth text-gray-800">
+    <!-- page1  -->
+    <div class="page1">
+        <header class="flex justify-between h-[100px] items-center p-6 px-6 md:px-18 relative">
+            <div class="text-2xl font-semibold pl-6">
+                <span class="text-black">Law</span><span class="text-gray-600">Gic</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex md:items-center md:justify-center gap-4 space-x-6 text-md">
+                <a href="#about" class="hover:text-yellow-600">About us</a>
+            
+                
+                <a href="#contact" class="hover:text-yellow-600">Contact</a>
+                <a href="/register" class="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded text-sm shadow">Register</a>
+                <a href="/login" class="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded text-sm shadow">Login</a>
+                <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded text-sm shadow">Make an appointment</a>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden pr-6 focus:outline-none" id="menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-[100px] left-0 w-full bg-[#f4eede] z-50 shadow-lg">
+                <div class="flex flex-col items-center space-y-4 py-6">
+                    <a href="#" class="hover:text-yellow-600 text-lg">About us</a>
+                    <a href="#" class="hover:text-yellow-600 text-lg">Contact</a>
+                    <!-- Mobile Case Tracker Dropdown -->
+                    <div class="w-full text-center">
+                    
+    
+                    </div>
+                    <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-black px-6 py-3 rounded text-lg shadow mt-2">Make an appointment</a>
+                </div>
+            </div>
+        </header>
+        
+        <main class="w-full flex flex-col lg:flex-row items-center justify-between px-6 md:px-16 pt-8 md:pl-25 lg:pt-20" style="min-height: calc(100vh - 100px)">
+            <div class="lg:w-1/2 h-full max-w-xl flex items-start justify-center text-center lg:text-left">
+                <div class="py-8 ">
+                    <p class="text-md text-yellow-700 leading-tight font-semibold mb-2">Law firm</p>
+                    <h1 class="text-4xl md:text-7xl font-medium leading-tight md:leading-[67px]">
+                        Overcome legal obstacles to your <span class="text-yellow-500 italic">success!</span>
+                    </h1>
+                    <p class="mt-6 text-gray-600 text-sm mb-6 md:text-base">
+                        Law without obstacles for your success. Professional support to help you overcome legal difficulties and achieve your goals.
+                    </p>
+                    <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-black px-6 py-3 rounded text-sm md:text-base shadow">Book a free consultation</a>
+                </div>
+            </div>
+        
+            <div class="lg:w-1/2 h-full flex justify-center relative mb-10 lg:mb-0">
+                <img src="../images/logo5.png" alt="Lawyer Woman" class="relative z-10 w-64 md:w-96 lg:w-96 object-center content-center object-contain" />
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+
+    <!-- page2 -->
+    <div class="page2 w-full min-h-screen bg-zinc-200 flex items-center justify-center px-6 md:px-20 py-12">
+        <section class="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 w-full h-full max-w-7xl">
+        <!-- Text content -->
+        <div class="lg:w-1/2 text-center lg:text-left">
+            <h2 class="text-3xl md:text-4xl font-playfair font-medium mb-6">
+            We know divorce is <span class="italic font-semibold">tough.</span>
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-8 text-base md:text-lg">
+            We work closely with our clients throughout every stage of what is usually a long and tough ordeal so that they can accomplish their goals and desires. With our combined experience of handling complex trials and litigations for over 30 years, you can trust us to be forthright and diligent in meeting your needs.
+            </p>
+            <a href="#" class="inline-block bg-[#1e3a5f] text-white px-8 py-3 text-sm font-semibold tracking-wide uppercase">
+            Get in touch
+            </a>
+        </div>
+    
+        <!-- Image -->
+        <div class="lg:w-1/2 h-full py-5 px-6 overflow-hidden flex justify-center">
+            <img class="h-[95%] w-[70%]" src="https://images.unsplash.com/photo-1590099543482-3b3d3083a474?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGF3JTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Lady Justice" class="max-w-full h-auto rounded" />
+        </div>
+        </section>
+    </div>
+
+    <!-- page3 -->
+    <div id="about" class="page3 w-full min-h-screen bg-[#2d2c2a]">
+        <!-- What We Focus On Section -->
+        <section class="w-full h-full text-white px-4 py-12 md:px-12">
+            <div class="w-full h-full mx-auto flex flex-col lg:flex-row">
+            
+                <!-- Left Title - Made responsive -->
+                <div class="lg:w-[40%] mb-6 lg:mb-0 flex items-start justify-center lg:items-center lg:justify-center">
+                    <h2 class="text-4xl md:text-5xl lg:text-7xl text-[#e3dfd6] font-playfair leading-tight md:leading-snug text-center lg:text-left">
+                    What we<br />
+                    <span class="italic">focus</span> on
+                    </h2>
+                </div>
+            
+                <!-- Right Content Boxes - Made responsive -->
+                <div class="lg:w-[50%] py-4 lg:py-10 flex flex-wrap justify-center gap-4 lg:gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-[#17375e] text-white p-4 lg:p-6 w-full sm:w-[340px] h-auto min-h-[200px] lg:h-[250px] flex flex-col">
+                        <h3 class="text-lg lg:text-xl font-playfair mb-2">Child Custody</h3>
+                        <p class="text-xs lg:text-sm leading-relaxed">
+                            What's special about your services or offerings? Give your audience a reason to choose you over your competition. Cite it above, then flesh it out here.
+                        </p>
+                    </div>
+            
+                    <!-- Card 2 -->
+                    <div class="bg-[#e7e3db] text-black p-4 lg:p-6 w-full sm:w-[340px] h-auto min-h-[200px] lg:h-[250px] flex flex-col">
+                        <h3 class="text-lg lg:text-xl font-playfair mb-2">Divorce</h3>
+                        <p class="text-xs lg:text-sm leading-relaxed">
+                            What's special about your services or offerings? Give your audience a reason to choose you over your competition. Cite it above, then flesh it out here.
+                        </p>
+                    </div>
+            
+                    <!-- Card 3 -->
+                    <div class="bg-white text-black p-4 lg:p-6 w-full sm:w-[340px] h-auto min-h-[200px] lg:h-[250px] flex flex-col">
+                        <h3 class="text-lg lg:text-xl font-playfair mb-2">Complex Litigation</h3>
+                        <p class="text-xs lg:text-sm leading-relaxed">
+                            What's special about your services or offerings? Give your audience a reason to choose you over your competition. Cite it above, then flesh it out here.
+                        </p>
+                    </div>
+            
+                    <!-- Card 4 (Image) -->
+                    <div class="w-full sm:w-[340px] h-[200px] lg:h-[250px]">
+                        <img src="../images/bg1.jpg" alt="Gavel and Scales" class="w-full h-full object-cover rounded" />
+                    </div>
+            
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- page4 -->
+    <div class="page4 w-full min-h-screen bg-white">
+        <!-- Our Main Services Section -->
+        <section class="w-full h-full bg-white px-4 py-8 md:px-12 md:py-16">
+            <!-- Image - Made responsive -->
+            <div class="px-4 md:px-6 mb-8 md:mb-12">
+                <div class="overflow-hidden">
+                    <img src="../images/bg3.jpg" alt="Legal consultation" 
+                        class="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-sm rounded-t-[5vw] md:rounded-t-[3vw]" />
+                </div>
+            </div>
+        
+            <!-- Text Content - Made responsive -->
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-start gap-6 md:gap-10 px-4 md:px-0">
+                <!-- Left: Title -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-3xl md:text-4xl text-[#2d2c2a] font-playfair leading-tight md:leading-snug">
+                        Our Main <span class="italic">Services</span>
+                    </h2>
+                </div>
+            
+                <!-- Right: Paragraph and List -->
+                <div class="lg:w-1/2 text-gray-700">
+                    <p class="mb-4 text-sm md:text-base">
+                        Share your services or specializations here, then list them down as bullet points for mobile-friendly easy reading.
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-xs sm:text-sm md:text-base">
+                        <li>Add as many bullets as you need</li>
+                        <li>Add as many bullets as you need</li>
+                        <li>Add as many bullets as you need</li>
+                        <li>Add as many bullets as you need</li>
+                        <li>Add as many bullets as you need</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- page5 -->
+   <!-- Testimonials Section -->
+    <div class="page5 w-full  min-h-screen">
+        <div class="w-full h-full px-4 py-12 md:py-20 text-center">
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-semibold mb-3">Testimonials from Clients</h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-8 md:mb-12">An honest look into how we work</p>
+        
+            <!-- Testimonials Grid -->
+            <div class="px-0 sm:px-4 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-center">
+            
+            <!-- Card 1 -->
+            <div class="bg-white h-auto min-h-[300px] w-full max-w-[400px] mx-auto p-6 md:p-8 shadow-md rounded-md">
+                <div class="text-3xl text-[#1f3b5b] mb-4"><i class="ri-double-quotes-r"></i></div>
+                <p class="text-sm md:text-base text-gray-700 mb-6 leading-relaxed">
+                Boost your product and service's credibility by adding testimonials from your clients. 
+                People love recommendations so feedback from others who've tried it is invaluable.
+                </p>
+                <hr class="my-4">
+                <p class="text-lg font-medium text-gray-900">- Ingrid Correa</p>
+            </div>
+        
+            <!-- Card 2 -->
+            <div class="bg-white h-auto min-h-[300px] w-full max-w-[400px] mx-auto p-6 md:p-8 shadow-md rounded-md">
+                <div class="text-3xl text-[#1f3b5b] mb-4"><i class="ri-double-quotes-r"></i></div>
+                <p class="text-sm md:text-base text-gray-700 mb-6 leading-relaxed">
+                Boost your product and service's credibility by adding testimonials from your clients. 
+                People love recommendations so feedback from others who've tried it is invaluable.
+                </p>
+                <hr class="my-4">
+                <p class="text-lg font-medium text-gray-900">- Wendy Salinas</p>
+            </div>
+        
+            <!-- Card 3 -->
+            <div class="bg-white h-auto min-h-[300px] w-full max-w-[400px] mx-auto p-6 md:p-8 shadow-md rounded-md">
+                <div class="text-3xl text-[#1f3b5b] mb-4"><i class="ri-double-quotes-r"></i></div>
+                <p class="text-sm md:text-base text-gray-700 mb-6 leading-relaxed">
+                Boost your product and service's credibility by adding testimonials from your clients. 
+                People love recommendations so feedback from others who've tried it is invaluable.
+                </p>
+                <hr class="my-4">
+                <p class="text-lg font-medium text-gray-900">- Gabriel Shelby</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== Full-Screen Footer ========== -->
+    <footer id="contact" class="min-h-[70vh] md:h-[70vh] w-full bg-[#2d2c2a] text-[#e3dfd6] flex flex-col justify-between px-6 py-8 md:px-16 md:py-10">
+        <!-- ========== Top Section: Logo + Contact + Hours ========== -->
+        <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-12">
+            <!-- Logo -->
+            <div class="text-left mb-6 md:mb-0">
+                <h2 class="text-white font-semibold text-sm">SOO AND TRAN<br />JUSTICE</h2>
+            </div>
+    
+            <!-- Contact Details -->
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-xl md:text-2xl font-serif mb-3 md:mb-4">Contact Details</h3>
+                <p class="text-sm md:text-base">123 Anywhere St.<br />Any City, ST 12345</p>
+                <p class="mt-2 md:mt-3 text-sm md:text-base">(123) 456-7890<br />hello@reallygreatsite.com</p>
+            </div>
+    
+            <!-- Office Hours -->
+            <div>
+                <h3 class="text-xl md:text-2xl font-serif mb-3 md:mb-4">Office Hours</h3>
+                <p class="text-sm md:text-base">Monday to Friday<br />9:00 am to 6:00 pm</p>
+                <p class="mt-2 md:mt-3 text-sm md:text-base">Saturday<br />9:00 am to 12 noon</p>
+                <p class="mt-2 md:mt-3 text-sm md:text-base">Closed on Sundays</p>
+            </div>
+        </div>
+    
+        <!-- ========== Middle Section: Social Icons ========== -->
+        <div class="mt-8 md:mt-10">
+            <h3 class="text-xl md:text-2xl font-serif mb-3 md:mb-4">Follow Us</h3>
+            <div class="flex items-center justify-start gap-4 md:gap-5">
+                <a href="#" aria-label="Facebook">
+                    <i class="ri-facebook-circle-fill text-2xl hover:text-white"></i>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <i class="ri-twitter-fill text-2xl hover:text-white"></i>
+                </a>
+                <a href="#" aria-label="Linkedin">
+                    <i class="ri-linkedin-fill text-2xl hover:text-white"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="ri-instagram-line text-2xl hover:text-white"></i>
+                </a>
+            </div>
+        </div>
+    
+        <!-- ========== Bottom Accessibility Note ========== -->
+        <div class="mt-8 md:mt-10 text-gray-400 text-xs md:text-sm">
+            We are an accessible workplace. Persons with disabilities are welcome to apply.
+        </div>
+    </footer>
+
+    <script src="/javascripts/home.js"></script>
+</body>
+</html>

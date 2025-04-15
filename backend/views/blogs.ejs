@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global Blog Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/stylesheets/blogs.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+</head>
+<body class="bg-[#f4eede] flex flex-col items-center min-h-screen p-4 md:p-8">
+
+  <!-- Header -->
+  <header class="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center mb-6 sticky top-0 z-10 bg-zinc-100 backdrop-blur-sm p-4 rounded-xl shadow-sm">
+    <h1 class="text-3xl font-bold text-gray-800 flex items-center mb-4 md:mb-0">
+      <i class="ri-global-line mr-2 text-blue-600"></i>
+      Know your LAWS
+    </h1>
+    <div class="flex items-center space-x-4">
+      <div class="relative">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search blogs..."
+          class="px-4 py-2 pr-10 text-sm border border-gray-200 rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 focus:outline-none w-48 md:w-64 transition-all"
+        />
+        <i class="ri-search-line absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+      </div>
+      <div class="relative group">
+        <select id="language-select"
+          class="px-4 py-2 text-sm font-medium border border-gray-200 rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 focus:outline-none appearance-none pr-8 cursor-pointer transition-all duration-200 hover:shadow-md">
+          <option value="en" data-flag="us">🇺🇸 English</option>
+          <option value="hi" data-flag="in">🇮🇳 Hindi</option>
+          <option value="mr" data-flag="in">🇮🇳 Marathi</option>
+          <option value="te" data-flag="in">🇮🇳 Telugu</option>
+          <option value="ta" data-flag="in">🇮🇳 Tamil</option>
+        </select>
+        <i class="ri-arrow-down-s-line absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none"></i>
+      </div>
+      <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all" aria-label="Toggle theme">
+        <i class="ri-sun-line text-gray-600"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="w-full max-w-4xl bg-gray-200 rounded-full h-1.5 mb-4">
+    <div id="progress-bar" class="progress-bar h-1.5 rounded-full" style="width: 0%"></div>
+  </div>
+
+  <!-- Blog Container -->
+  <div id="blog-container" class="relative w-full max-w-4xl blog-card bg-zinc-100 rounded-2xl p-6 md:p-8 overflow-y-auto max-h-[80vh] shadow-xl">
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="hidden flex justify-center items-center h-64">
+      <div class="loading-spinner"></div>
+    </div>
+    <!-- Blog Content -->
+    <div id="blog-content" class="text-gray-800 space-y-6 fade-in hidden">
+      <div class="flex justify-between items-start">
+        <div>
+          <span id="blog-date" class="text-sm text-gray-500 font-medium"></span>
+          <h2 class="text-2xl md:text-3xl font-bold mt-1" id="blog-title"></h2>
+          <div id="blog-author" class="flex items-center mt-2 text-gray-600">
+            <i class="ri-user-3-line mr-2"></i>
+            <span></span>
+          </div>
+        </div>
+        <span id="blog-category" class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800"></span>
+      </div>
+      <div class="border-t border-gray-200 my-4"></div>
+      <div class="text-base leading-relaxed space-y-4" id="blog-body"></div>
+      <button id="read-more" class="text-blue-600 hover:underline text-sm hidden">Read More</button>
+      <div class="border-t border-gray-200 my-4"></div>
+      <div id="blog-tags" class="flex flex-wrap gap-2"></div>
+      <div class="flex justify-between items-center mt-4">
+        <button id="bookmark-btn" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors" aria-label="Bookmark blog">
+          <i class="ri-bookmark-line mr-1"></i>
+          <span>Bookmark</span>
+        </button>
+        <button id="share-btn" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors" aria-label="Share blog">
+          <i class="ri-share-line mr-1"></i>
+          <span>Share</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="flex items-center justify-center space-x-4 mt-6">
+    <button id="prev-blog" class="nav-button p-3 bg-white rounded-full shadow-md hover:shadow-lg" aria-label="Previous blog">
+      <i class="ri-arrow-left-line text-xl text-gray-700"></i>
+    </button>
+    <div id="pagination" class="flex space-x-2"></div>
+    <button id="next-blog" class="nav-button p-3 bg-white rounded-full shadow-md hover:shadow-lg" aria-label="Next blog">
+      <i class="ri-arrow-right-line text-xl text-gray-700"></i>
+    </button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg hidden">
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 text-sm mt-8">
+    <p>Use arrow keys, swipe, or buttons to navigate. Click blog to pause/resume auto-play.</p>
+  </footer>
+
+  <script src="/javascripts/blogs.js"></script>
+</body>
+</html>

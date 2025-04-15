@@ -1,0 +1,77 @@
+<!-- Lottie Player Script -->
+
+
+<!-- <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> -->
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+
+<!-- Loader Container -->
+<div id="loader" class="fixed inset-0 bg-[#f4eede] flex items-center justify-center z-50 opacity-100 transition-opacity duration-500">
+  <!-- <dotlottie-player
+    src="https://lottie.host/9463908a-4d83-4403-9f29-855c8ff184d3/aqFx2wjDd8.lottie"
+    background="transparent"
+    speed="1"
+    style="width: 150px; height: 150px"
+    loop
+    autoplay
+  ></dotlottie-player> -->
+
+  <dotlottie-player 
+  src="https://lottie.host/818f47e9-5c48-4e5c-b8df-0ef414d6adbe/TZZekfmQq5.lottie" 
+  background="transparent" 
+  speed="1" 
+  style="width: 300px; height: 300px" 
+  loop 
+  autoplay
+  ></dotlottie-player>
+
+</div>
+
+
+
+
+
+<!-- Optional Pulse Animation -->
+<style>
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 0.9;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  dotlottie-player {
+    animation: pulseSlow 2s ease-in-out infinite;
+  }
+
+  /* Fade out transition */
+  #loader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+<!-- Loader Hide Script -->
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const loader = document.getElementById('loader');
+      if (loader) {
+        loader.classList.add('fade-out');
+        // Optional: remove from DOM after fade
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500); // matches CSS fade duration
+      }
+    }, 3000); // Loader stays for 3 seconds minimum
+  });
+</script>
+
+
+
+
+  

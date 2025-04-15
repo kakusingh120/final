@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lawyers In Your City</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f4eede]">
+  <div class="min-h-screen py-10 px-4">
+    <h1 class="text-3xl font-bold text-center mb-10 text-gray-800">Lawyers Available in Your City</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <% lawyers.forEach(lawyer => { %>
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="<%= lawyer.avatar || 'https://via.placeholder.com/80' %>" alt="Lawyer Avatar" class="w-16 h-16 rounded-full object-cover shadow">
+            <div>
+              <h2 class="text-xl font-semibold text-gray-800"><%= lawyer.username || 'Advocate' %></h2>
+              <p class="text-gray-500 text-sm">Specialization: <%= lawyer.specialization %></p>
+            </div>
+          </div>
+
+          <ul class="text-gray-700 text-sm space-y-1 mb-4">
+            <li><strong>Experience:</strong> <%= lawyer.yearsOfExperience %> years</li>
+            <li><strong>Bar Reg. No:</strong> <%= lawyer.barRegistrationNumber %></li>
+          
+            <li><strong>Rating:</strong> ⭐ <%= lawyer.rating || 'N/A' %></li>
+            <li><strong>Available:</strong>
+              <%= lawyer.available ? '✅ Yes' : '❌ No' %>
+            </li>
+          </ul>
+
+          <form action="/appointment/<%= lawyer._id %>" method="POST">
+            <button type="submit" class="block w-full text-center bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-2 rounded shadow">
+              Make an Appointment
+            </button>
+          </form>
+          
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

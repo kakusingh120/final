@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawyer Registration</title>
+  <link rel="stylesheet" href="./stylesheets/lawRegister.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="lawyerRegisterForm" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="username" placeholder="Username" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" name="phone" placeholder="Phone number" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="password" placeholder="Password" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Specialization</span>
+            <input type="text" name="specialization" placeholder="Specialization" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Bar Registration Number</span>
+            <input type="text" name="barRegistrationNumber" placeholder="Bar Registration Number" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Years of Experience</span>
+            <input type="text" name="yearsOfExperience" placeholder="Years of Experience" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" name="city" placeholder="City" required>
+          </div>
+
+          <!-- Avatar Image Upload -->
+          <div class="input-box">
+            <span class="details">Avatar Image</span>
+            <input type="file" name="avatar" accept="image/*" required>
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="input-box">
+          <label for="gender">Gender</label>
+          <select name="gender" id="gender" required>
+            <option value="">Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Submit -->
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("lawyerRegisterForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("http://localhost:8000/api/auth/register/lawyer", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert("Registration successful!");
+          window.location.href = "/";
+        } else {
+          alert(result.message || "Registration failed.");
+        }
+      } catch (err) {
+        console.error("Registration error:", err);
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

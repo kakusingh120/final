@@ -1,0 +1,73 @@
+/* Reset and basic setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #e2d8c9;
+    font-family: 'Jost', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .role-selection {
+    height: 270px;
+    width: 650px;
+    text-align: center;
+    padding: 40px;
+    background: #f0ebdf;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .btn {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .user {
+    background-color: #3d6cb9;
+    color: white;
+  }
+  
+  .lawyer {
+    background-color: #1e2d2f;
+    color: white;
+  }
+
+  .ongc {
+    background-color: #826b05;
+    color: white;
+  }
+  
+  .btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+  
